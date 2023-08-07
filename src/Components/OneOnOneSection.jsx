@@ -12,7 +12,6 @@ const OneOnOneSection = (student)  => {
         const newNote = {commenterName, comment};
         setNotes([...notes, newNote]);
         setCommenterName('');
-        setComment('');
     }
  };
 

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import StudentCard from "./StudentList";
+import StudentCard from "./StudentCard";
 import data from "../data/data.json";
 
 function StudentList() {
   const [selectedCohort, setSelectedCohort] = useState(null);
-  const cohorts = array.from(new Set(data.map((student) => student.cohort)));
+  const cohorts = Array.from(new Set(data.map((student) => student.cohort)));
 
   const filteredStudents = selectedCohort
     ? data.filter((student) => student.cohort === selectedCohort)

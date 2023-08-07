@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import data from "../data/data.json";
 
 const CohortCard = ({ cohortCode }) => {
-  const [showStudents, setShowStudents] = useState(false);
+  const [showStudents, setShowStudents] = useState(true);
 
   const studentsInCohort = data.filter(
     (student) => student.cohort.cohortCode === cohortCode
@@ -22,6 +22,7 @@ const CohortCard = ({ cohortCode }) => {
               {/*For example: */}
               <p>Name: {student.name.preferredName}</p>
               <p>Email: {student.username}</p>
+              <p>Birthday:{student.dob}</p>
             </div>
           ))}
         </div>
