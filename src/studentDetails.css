@@ -1,0 +1,12 @@
+.student-details {
+    background-color: white;
+    padding:10px;
+}
+
+.student-details p {
+    margin: 5px 0;
+}
+
+.student-details p:last-child {
+    margin-bottom: 0;
+}
