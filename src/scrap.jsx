@@ -54,4 +54,14 @@
 //         </div>
 //     );
 //     };
-    
+{/* <div className="cohort-links">
+<h2>Choose a Class by Start Date</h2>
+<a onClick={() => handleCohortClick('Spring2025')} href="{studentDetails}">Spring 2025</a>
+<a onClick={() => handleCohortClick('Summer2025')} href="{studentDetails}">Summer 2025</a>
+<a onClick={() => handleCohortClick('Fall2025')} href="#!">Fall 2025</a>
+<a onClick={() => handleCohortClick('Winter2025')} href="#!">Winter 2025</a>
+<a onClick={() => handleCohortClick('Spring2026')} href="#!">Spring 2026</a>
+<a onClick={() => handleCohortClick('Summer2026')} href="#!">Summer 2026</a>
+<a onClick={() => handleCohortClick('Fall2026')} href="#!">Fall 2026</a>
+<a onClick={() => handleCohortClick('Winter2026')} href="#!">Winter2026</a>
+</div> */}

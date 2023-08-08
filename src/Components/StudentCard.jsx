@@ -1,11 +1,13 @@
 import React, {useState} from "react";
 import data from "../data/data.json"
+import StudentDetails from "./StudentDetails"
 
 const studentCard = ({ student }) => {
-const [showDetails, setShowDetails] = useState(false);
-
+    const [showDetails, setShowDetails] = useState(false);
+   
 const toggleDetails = () => {
     setShowDetails(!showDetails)
+};
 
     const {
         name,
@@ -35,7 +37,7 @@ return (
         <button onClick={toggleDetails}>
             {showDetails ? 'Hide Details' : 'Show Details'}
         </button>
-        {showDetails && <StudentDetails student={student} />}
+        {showDetails ? (<StudentDetails student={student}/>) :null}
     <div className={`student-card ${isOnTrack ? "on-track" : "off-track"}`}>
     <img src={profilePhoto} alt={name} />
     <h3>{name}</h3>
@@ -45,6 +47,5 @@ return (
     </div>
     </div>
 );
-};
 }
 export default studentCard;

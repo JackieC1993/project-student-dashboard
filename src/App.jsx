@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import data from "./data/data.json";
 import OneOnOneSection from "./Components/OneOnOneSection";
 import StudentCard from "./Components/StudentCard";
+import CohortMenu from "./Components/CohortMenu";
 //import StudentDetails from "./Components/StudentDetails";
 import "./index.css";
-//import CohortCard from "./Components/CohortCard";
 
 function App() {
+const handleSelectCohort = (cohort) => {
+  setSelectedCohort(cohort);
+}  
 const studentCount = data.length;
 const student = data[0]
 const [selectedCohort,setSelectedCohort] = useState('')
@@ -40,28 +43,22 @@ setSelectedCohort(cohortCode);
   return (
     <div className="app">
       <h1>Student Dashboard</h1>
-      <div className="cohort-links">
-        <h2>Choose a Class by Start Date</h2>
-        <a onClick={() => handleCohortClick('Spring2025')} href="{studentDetails}">Spring 2025</a>
-        <a onClick={() => handleCohortClick('Summer2025')} href="{studentDetails}">Summer 2025</a>
-        <a onClick={() => handleCohortClick('Fall2025')} href="#!">Fall 2025</a>
-        <a onClick={() => handleCohortClick('Winter2025')} href="#!">Winter 2025</a>
-        <a onClick={() => handleCohortClick('Spring2026')} href="#!">Spring 2026</a>
-        <a onClick={() => handleCohortClick('Summer2026')} href="#!">Summer 2026</a>
-        <a onClick={() => handleCohortClick('Fall2026')} href="#!">Fall 2026</a>
-        <a onClick={() => handleCohortClick('Winter2026')} href="#!">Winter2026</a>
-      </div>
-      
       <div className="totalStudents">
       <p>Number of Students: {data.length}</p>
+      <CohortMenu onSelectCohort={handleSelectCohort}/>
+      <div className="students-list">
+        {data.map((student) => (
+          <StudentCard key={student.id} student={student} />
+        ))}
+      </div>
 </div>
 <div>
       {renderStudents}
      <OneOnOneSection/>
       <StudentCard student={student} />
       {/* <StudentDetails/> */}
-
       {selectedCohort && <CohortCard cohortCode={selectedCohort} />}
+
       </div> 
       </div>
   );

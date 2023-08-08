@@ -6,9 +6,9 @@ const StudentDetails =({student}) => {
         <div className="student-details">
             <p>CodeWars Score: {student.codewars.current.total}</p>
             <p>Resume Certification: {student.certifications.resume ?'✅' : '❌'}</p>
-            <p>LinkedIn Certification: {student.certfication.linkedin ?'✅' : '❌'}</p>
-            <p>Github Certification: {student.certfication.github ?'✅' : '❌'} </p>
-            <p>Mock Interview Certification: {student.certfication.mockInterview ?'✅' : '❌'}</p>
+            <p>LinkedIn Certification: {student.certifications.linkedin ?'✅' : '❌'}</p>
+            <p>Github Certification: {student.certifications.github ?'✅' : '❌'} </p>
+            <p>Mock Interview Certification: {student.certifications.mockInterview ?'✅' : '❌'}</p>
             <OneOnOneSection student={student} />
             
             <h3>Notes</h3>
