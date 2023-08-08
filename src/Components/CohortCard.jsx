@@ -18,8 +18,6 @@ const CohortCard = ({ cohortCode }) => {
         <div className="students">
           {studentsInCohort.map((student) => (
             <div className="student-card" key={student.id}>
-              {/* Display student details here */}
-              {/*For example: */}
               <p>Name: {student.name.preferredName}</p>
               <p>Email: {student.username}</p>
               <p>Birthday:{student.dob}</p>

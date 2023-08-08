@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 
-const OneOnOneSection = (student)  => {
+const OneOnOneSection = ({student})  => {
     const [commenterName, setCommenterName] = useState('');
     const [comment,setComment] = useState('');
     const [notes, setNotes] = useState ([]);
@@ -12,6 +12,7 @@ const OneOnOneSection = (student)  => {
         const newNote = {commenterName, comment};
         setNotes([...notes, newNote]);
         setCommenterName('');
+        setComment('');
     }
  };
 

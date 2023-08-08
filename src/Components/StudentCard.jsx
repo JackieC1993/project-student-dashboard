@@ -1,7 +1,12 @@
 import React, {useState} from "react";
 import data from "../data/data.json"
 
-const StudentCard = (student) => {
+const studentCard = ({ student }) => {
+const [showDetails, setShowDetails] = useState(false);
+
+const toggleDetails = () => {
+    setShowDetails(!showDetails)
+
     const {
         name,
         email,
@@ -12,23 +17,34 @@ const StudentCard = (student) => {
     } = student ;
 
     const isOnTrack = data.map(
-    (student) => {
-        student.resume &&
-        student.linkedin &&
-        student.github &&
-        student.mockInterview &&
+    (certifications) => {
+        certifications.resume &&
+        certifications.linkedin &&
+        certifications.github &&
+        certifications.mockInterview &&
         codeWarScore > 600
     }   
         )
 return (
+    <div className="student-card">
+        <img src={student.profilePhoto} alt={student.name} />
+        <h2>{student.name}</h2>
+        <p>{student.username}</p>
+        <p>Birthday: {student.birthday}</p>
+        <p>On Track: {student.onTrack ? 'Yes' : 'No'}</p>
+        <button onClick={toggleDetails}>
+            {showDetails ? 'Hide Details' : 'Show Details'}
+        </button>
+        {showDetails && <StudentDetails student={student} />}
     <div className={`student-card ${isOnTrack ? "on-track" : "off-track"}`}>
-    <img src={student.profilePhoto} alt={name} />
-    <h1>{name}</h1>
-    <p>Email: {student.username}</p>
-    <p>Birthday: {student.dob}</p>
-    <p>CodeWars Score:{student.codeWarScore}%</p>
+    <img src={profilePhoto} alt={name} />
+    <h3>{name}</h3>
+    <p>Email: {email}</p>
+    <p>Birthday: {birthday}</p>
+    <p>CodeWars Score:{codeWarScore}%</p>
+    </div>
     </div>
 );
 };
-
-export default StudentCard;
+}
+export default studentCard;

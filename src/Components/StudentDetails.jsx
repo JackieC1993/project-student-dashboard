@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import OneOnOneSection from './OneOnOneSection';
 
-
 const StudentDetails =({student}) => {
     return(
         <div className="student-details">
